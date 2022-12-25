@@ -13,7 +13,7 @@ def index():
 @app.route('/quote')
 def quote():
     result = requests.get('https://api.kanye.rest')
-    return result.text
+    return f"Quote Kanye: {result.json()['quote']}"
 
 @app.route('/time')
 def time():
