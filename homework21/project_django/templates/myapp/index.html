@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+    {% for quote in quotes %}
+        Quote Kanye: {{ quote }}
+        <br><br>
+    {% endfor %}
+    </ul>
+{% endblock %}
