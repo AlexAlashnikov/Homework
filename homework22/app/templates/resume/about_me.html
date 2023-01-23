@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand p-0" href="">
+        <img src="{% static 'images/A.png' %}" alt="Logo" width="40" />
+    </a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'resume:home_page' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'resume:about_me' %}">Обо мне</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'resume:hard_skills' %}"
+            >Мои навыки</a
+            >
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+    <div class="col">
+        <div class="card">
+        <img
+            src="{% static 'images/hogwarts-school.jpg' %}"
+            class="card-img-top"
+            alt="My image"
+        />
+        <div class="card-body">
+            <h5 class="card-title">Школа</h5>
+            <p class="card-text">
+            Я родился в Витебске и учился в школе №15, где получил среднее
+            образование. Учился довольно не плохо и даже любил ходить в
+            школу, но только ходить, учиться не любил. Хочется отблагодарить
+            свою школу и по этому когда отучусь сделаю им нормальный сайт.
+            Проверьте их сайт сейчас, нажав на кнопку.
+            </p>
+            <a
+            href="http://sch15.vitebsk.edu.by/"
+            target="_blank"
+            class="btn btn-primary"
+            >Моя школа</a
+            >
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+        <img
+            src="{% static 'images/gpl.jpeg' %}"
+            class="card-img-top"
+            alt="My image"
+        />
+        <div class="card-body">
+            <h5 class="card-title">Образование и специальность</h5>
+            <p class="card-text">
+            После школы я поступил в "Кохановский Государственный Колледж"
+            на специальность, водитель, тракторист, слесарь с/x
+            производства. Учился там 10 месяцев, после чего отправился
+            работать на "ОАО" Доломит.
+            </p>
+            <a
+            href="http://kgplsp.vitebsk-region.edu.by/"
+            target="_blank"
+            class="btn btn-primary"
+            >Мой колледж</a
+            >
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+        <img
+            src="{% static 'images/arm.jpg' %}"
+            class="card-img-top"
+            alt="My image"
+        />
+        <div class="card-body">
+            <h5 class="card-title">Армия</h5>
+            <p class="card-text">
+            Ещё хочу рассказать об одном супер замечательном месте, которое
+            было в моей жизни, конечно же это Армия. Я служил в Пограничных
+            Войсках с 2011 по 2015 год. Служил сначала в Дзержинске, а после
+            на заставе в Бресте, где остался на контракт. Службу окончил в
+            звании Старшина!
+            </p>
+            <a
+            href="https://gpk.gov.by/"
+            target="_blank"
+            class="btn btn-primary"
+            >Погранкоммитет</a
+            >
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
