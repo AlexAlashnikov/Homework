@@ -1,14 +1,10 @@
-from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from .models import Game, Category
 
 
 def every_game(request, game_slug):
-    game = Game.objects.get(slug=game_slug)
-    if game is not None:
-        return render(request, 'games/game.html', {'game': game})
-    else:
-        raise Http404('Упс кажется такой игры нет!')
+    game = get_object_or_404(Game, slug=game_slug)
+    return render(request, 'games/game.html', {'game': game})
 
 
 def games_all(request):
