@@ -8,7 +8,7 @@
         <img class="rounded" style="width: 400px; height: 400px; object-fit: cover;" src={{sort.game_image.url}} alt="Name" />
         <br><br>
         <h5><a href="{% url 'game:game_slug' game_slug=sort.slug %}">{{sort.name}}</a></h5>
-        <li>Жанр: {{sort.category}}</li>
+        <li>Жанр: {{sort.category.name}}</li>
         <li>Цена: {{sort.price}} руб</li><br>
         <hr>
     {% endfor %}
