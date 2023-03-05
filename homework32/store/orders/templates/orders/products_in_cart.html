@@ -1,0 +1,53 @@
+{% extends 'game_store/base.html' %}
+{% block title %}Products in Cart{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+    {% if carts %}
+        <h1 class="text-center mb-5">Корзина</h1>
+        <div class="col-sm-8">
+        <div class="card">
+            <div class="card-body">
+                {% for item in carts %}
+                    <div class="row">
+                        <div class="col-sm-3 text-center align-self-center"><img src="{{item.product.game_image.url}}" alt={{item.product.name}} class="img-fluid img-thumbnail shadow-sm" height="200" width="200"/></div>
+                        <div class="col-sm-9">
+                            <div>
+                                <h5><a href="{% url 'game:game_slug' game_slug=item.product.slug %}"  class="text-info">{{item.product.name}}</a></h5>
+                                <div class="my-3">
+                                <label>Кол-во:</label>
+                                    <span>{{item.quantity}}</span><br>
+                                <label>Цена:</label>
+                                    <span>{{item.total_amount}} руб</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="{% url 'orders:cart_remove' item.product.slug %}" class="btn btn-sm btn-secondary">Удалить из Kорзины</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-muted">
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Общая Сумма</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">Итого:<span>{{amount}} руб.</span></li>
+                    </ul>
+                    <div><a href="{% url 'orders:cart_order' %}" class="btn btn-success">Заказать</a></div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <h1 class="text-center">Ваша корзина пуста</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
