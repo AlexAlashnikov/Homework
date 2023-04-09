@@ -1,0 +1,12 @@
+{% set title = "Main" %}
+
+{% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>Message: {{ message.message_text }}</li>
+        <li>Time: {{message.time}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No messages are available.</p>
+{% endif %}
